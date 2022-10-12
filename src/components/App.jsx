@@ -1,4 +1,14 @@
-export const App = () => {
+import { Component } from "react";
+import { Searchbar } from "./Searchbar/Searchbar";
+export class App extends Component {
+  state = {
+    searchQuery: '',
+  };
+  
+  handleFormSubmit = searchQuery => {
+    this.setState({ searchQuery });
+  };
+render(){
   return (
     <div
       style={{
@@ -10,7 +20,7 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
+      <Searchbar onSubmit = {this.handleFormSubmit}/>
     </div>
   );
-};
+}};
