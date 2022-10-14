@@ -10,15 +10,13 @@ export class Searchbar extends Component {
 
 
   handleSubmit = event => {
-    console.dir(this.state.searchQuery);
     event.preventDefault();
     
     if (this.state.searchQuery.trim() === '') {
-        console.dir(this.state.searchQuery)
       alert('Введите имя покемона.');
       return;
     }
-
+    
     this.props.onSubmit(this.state.searchQuery);
     this.setState({ searchQuery: '' });
   };
@@ -34,8 +32,8 @@ export class Searchbar extends Component {
           <input
             className="input"
             type="text"
-            // autocomplete="off"
-            // autofocus
+            autoComplete="off"
+            autoFocus
             placeholder="Search images and photos"
             onChange={this.handleNameChange}
             value={this.state.searchQuery} 

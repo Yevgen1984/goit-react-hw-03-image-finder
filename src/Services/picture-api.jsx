@@ -1,18 +1,15 @@
 import axios from 'axios';
-export const axiosPicture = (name)=> {
-    const response = axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
-    console.dir(response);
-    return response.data.hits;
-  };
-    
-    
-    
-    
-    // return fetch(`https://pokeapi.co/api/v2/pokemon/${name}`).then(response => {
-    //   if (response.ok) {
-    //     return response.json();
-    //   }
-  
-    //   return Promise.reject(new Error(`Нет покемона с именем ${name}`));
-    // });
+
+export const axiosPicture = async (query, page) => {
+  const BASE_URL = 'https://pixabay.com/api/';
+  const KEY = '29876171-467d2b4c1ee85715865faf87a';
+
+  const filtersImages = '&per_page=12&image_type=photo&orientation=horizontal&safesearch=true';
+
+  const response = await axios.get(
+    `${BASE_URL}?key=${KEY}&q=${query}&page=${page}${filtersImages}`
+  );
+
+  return response.data.hits;
+}
   
