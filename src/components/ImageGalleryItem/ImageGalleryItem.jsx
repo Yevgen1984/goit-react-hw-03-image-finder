@@ -1,9 +1,20 @@
-export const GalleryItem = ({ gallery }) => {
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import s from './ImageGalleryItem.module.css';
+
+export const GalleryItem = ({ gallery, openModal }) => {
   return (
     <>
-      {gallery.map(({ id, webformatURL, tags }) => (
-        <li key={id}>
-          <img src={webformatURL} alt={tags} />
+      {gallery.map(({ id, webformatURL, tags, largeImageURL }) => (
+        <li key={id} className={s.itemGallery}>
+          <a
+            href="#"
+            onClick={() => {
+              openModal({ src: largeImageURL, alt: tags });
+            }}
+            rel="noreferrer"
+          >
+            <img className={s.image} src={webformatURL} alt={tags} width="350"  />
+          </a>
         </li>
       ))}
     </>
