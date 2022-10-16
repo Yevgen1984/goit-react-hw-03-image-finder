@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import { BsSearch } from 'react-icons/bs';
-import { Note } from '../ImageGallery/Notification';
+// import { Note } from '../ImageGallery/Notification';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import s from './Searchbar.module.css';
