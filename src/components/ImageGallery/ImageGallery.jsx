@@ -4,7 +4,7 @@ import { GalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
 import { ButtonPagination } from 'components/Button/Button';
 import { Modal } from '../Modal/Modal';
 import ThreeDots from '../Loader/Loader';
-import {Note} from './Notification';
+// import {Note} from './Notification';
 import s from './ImageGallery.module.css';
 
 export class Gallery extends Component {
